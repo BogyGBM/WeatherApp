@@ -3,6 +3,7 @@ package controller;
 import Model.WeatherAppModel;
 import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonArray;
+import com.eclipsesource.json.JsonObject;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -93,10 +94,57 @@ public class WeatherAppController {
 
     public void WriteDatas(ActionEvent actionEvent) {
         String countryCode= new String();
-        for(int i=0;i<weatherData.size();i++) {
-            if (weatherData.get(i).getCountryName().equals(countryBox.getValue())) {
-                countryCode = weatherData.get(i).getCountryCode();
+        for(int i=0;i<weatherData.size();i++)
+        {
+            if(weatherData.get(i).getCountryName().equals(countryBox.getValue()))
+            {
+                countryCode=weatherData.get(i).getCountryCode();
             }
+        }
+        if(cityBox.getValue() != null) {
+                String url1 = "http://api.openweathermap.org/data/2.5/weather?q=" + cityBox.getValue() + "," + countryCode + "&appid=07eabd997e8469117b037403a758455a&units=metric";
+                //System.out.println(url1);
+                URL url=null;
+                try {
+                    url = new URL(url1);
+                }
+                catch (MalformedURLException e)
+                {
+                    e.printStackTrace();
+                }
+                URLConnection conn=null;
+                BufferedReader reader=null;
+                String json = null;
+                try {
+                   conn  = url.openConnection();
+                   reader = new BufferedReader( new InputStreamReader( conn.getInputStream() ) );
+                   json = org.apache.commons.io.IOUtils.toString(reader);
+                }
+                catch(IOException e)
+                {
+                    e.printStackTrace();
+                }
+
+
+                String iconCode= "";
+               // System.out.println(json);
+                JsonArray items = Json.parse(json).asObject().get("weather").asArray();
+                String weather = items.get(0).asObject().getString("main","Unknown");
+
+                JsonObject main = Json.parse(json).asObject().get("main").asObject();
+           // String temperature = items.get(0).asObject().getString("description", "Unknown Item");
+           // String _capInfo=_info.substring(0,1).toUpperCase(Locale.ROOT)+_info.substring(1);
+                JsonObject wind = Json.parse(json).asObject().get("wind").asObject();
+                Double speed = wind.getDouble("speed", 0);
+                Double temperature = main.getDouble("temp", 0);
+                Double temperatureMin= main.getDouble("temp_min", 0);
+                Double temperatureMax= main.getDouble("temp_max", 0);
+                cityTemperature.setText(temperature.toString());
+                cityName.setText(cityBox.getValue());
+                cityWeather.setText(weather);
+                cityLowestTemperature.setText(temperatureMin.toString());
+                cityHighestTemperature.setText(temperatureMax.toString());
+                cityWindSpeed.setText(speed.toString());
         }
     }
 }
