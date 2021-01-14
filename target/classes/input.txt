@@ -1,0 +1,24 @@
+BW#Gaborone#Botswana
+BW#Maun#Botswana
+BR#Curitiba#Brazilia
+BR#Salvador#Brazilia
+CA#Toronto#Canada
+CA#Vancouver#Canada
+CN#Beijing#China
+CN#Shanghai#China
+FJ#Suva#Fiji
+FJ#Nadi#Fiji
+JM#Kingston#Jamaica
+JM#Ocho Rios#Jamaica
+JM#Montego Bay#Jamaica
+MD#Chisinau#Moldova
+MD#Tiraspol#Moldova
+RO#Giurgiu#Romania
+RO#Slatina#Romania
+RO#Brasov#Romania
+GR#Atena#Grecia
+GR#Salonic#Grecia
+FR#Paris#Franta
+FR#Lyon#Franta
+DK#Copenhaga#Danemarca
+DK#Aalborg#Danemarca

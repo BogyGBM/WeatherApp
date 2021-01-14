@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="437.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WeatherAppController">
+   <children>
+      <SplitPane dividerPositions="0.31155778894472363" layoutX="139.0" layoutY="45.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="437.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <ChoiceBox onAction="#WriteCities" fx:id="countryBox" layoutX="42.0" layoutY="48.0" prefWidth="150.0" />
+                  <ChoiceBox onAction="#WriteDatas" fx:id="cityBox" layoutX="246.0" layoutY="48.0" prefWidth="150.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="weatherImage" fitHeight="271.0" fitWidth="212.0" layoutX="224.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="cityName" layoutX="26.0" layoutY="27.0" prefHeight="7.0" prefWidth="52.0" text="Label" />
+                  <Label fx:id="cityTemperature" layoutX="26.0" layoutY="57.0" prefHeight="18.0" prefWidth="52.0" text="Label" />
+                  <Label fx:id="cityWeather" layoutX="26.0" layoutY="83.0" prefHeight="18.0" prefWidth="52.0" text="Label" />
+                  <Label fx:id="cityLowestTemperature" layoutX="26.0" layoutY="110.0" prefHeight="18.0" prefWidth="52.0" text="Label" />
+                  <Label fx:id="cityHighestTemperature" layoutX="26.0" layoutY="136.0" prefHeight="18.0" prefWidth="45.0" text="Label" />
+                  <Label fx:id="cityWindSpeed" layoutX="26.0" layoutY="167.0" text="Label" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
