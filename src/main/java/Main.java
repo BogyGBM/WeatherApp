@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -25,7 +26,7 @@ public class Main extends Application {
 
         FXMLLoader loader = new FXMLLoader();
         primaryStage.setTitle("WeatherApp-Bogy");
-        //primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/view/icon.png")));
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/view/icon.png")));
         try {
             loader.setLocation(this.getClass().getResource("/view/WeatherAppView.fxml"));
             primaryStage.setScene(new Scene(loader.load()));

@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 
 import java.io.*;
 import java.net.MalformedURLException;
@@ -23,7 +24,8 @@ import java.util.Scanner;
 public class WeatherAppController {
     private ObservableList<WeatherAppModel> weatherData = FXCollections.observableArrayList();
 
-
+    @FXML
+    private SplitPane splitPane;
     @FXML
     private Label cityName;
     @FXML
@@ -42,6 +44,17 @@ public class WeatherAppController {
     private ChoiceBox<String> cityBox;
     @FXML
     private ImageView weatherImage;
+    @FXML
+    private Label labelTemperature;
+    @FXML
+    private Label labelWeather;
+    @FXML
+    private Label labelFrom;
+    @FXML
+    private Label labelTo;
+    @FXML
+    private Label labelWindSpeed;
+
 
     public void InitializareData()
     {
@@ -63,10 +76,33 @@ public class WeatherAppController {
         }
     }
 
+    public void ClearLables()
+    {
+        labelTemperature.setText("");
+        labelFrom.setText("");
+        labelTo.setText("");
+        labelWindSpeed.setText("");
+        labelWeather.setText("");
+        cityName.setText("");
+        cityHighestTemperature.setText("");
+        cityWindSpeed.setText("");
+        cityLowestTemperature.setText("");
+        cityTemperature.setText("");
+        cityWeather.setText("");
+    }
 
+    public void WriteLables()
+    {
+        labelTemperature.setText("Temperature:");
+        labelFrom.setText("From:");
+        labelTo.setText("To:");
+        labelWindSpeed.setText("Wind Speed:");
+        labelWeather.setText("Weather:");
+    }
 
     @FXML
     private void initialize() {
+        ClearLables();
         InitializareData();
         ArrayList<String> countries = new ArrayList<>();
         for(int i=0;i<weatherData.size();i++) {
@@ -79,6 +115,7 @@ public class WeatherAppController {
     }
 
     public void WriteCities(ActionEvent actionEvent) {
+        ClearLables();
         cityBox.getItems().clear();
         String country = countryBox.getValue();
         ArrayList<String> cities = new ArrayList<>();
@@ -93,6 +130,8 @@ public class WeatherAppController {
     }
 
     public void WriteDatas(ActionEvent actionEvent) {
+        ClearLables();
+
         String countryCode= new String();
         for(int i=0;i<weatherData.size();i++)
         {
@@ -102,6 +141,7 @@ public class WeatherAppController {
             }
         }
         if(cityBox.getValue() != null) {
+                WriteLables();
                 String url1 = "http://api.openweathermap.org/data/2.5/weather?q=" + cityBox.getValue() + "," + countryCode + "&appid=07eabd997e8469117b037403a758455a&units=metric";
                 //System.out.println(url1);
                 URL url=null;
@@ -139,12 +179,13 @@ public class WeatherAppController {
                 Double temperature = main.getDouble("temp", 0);
                 Double temperatureMin= main.getDouble("temp_min", 0);
                 Double temperatureMax= main.getDouble("temp_max", 0);
-                cityTemperature.setText(temperature.toString());
+                cityTemperature.setText(temperature.toString() + " °C");
                 cityName.setText(cityBox.getValue());
+                cityName.textAlignmentProperty();
                 cityWeather.setText(weather);
-                cityLowestTemperature.setText(temperatureMin.toString());
-                cityHighestTemperature.setText(temperatureMax.toString());
-                cityWindSpeed.setText(speed.toString());
+                cityLowestTemperature.setText(temperatureMin.toString()+" °C");
+                cityHighestTemperature.setText(temperatureMax.toString()+" °C");
+                cityWindSpeed.setText(speed.toString()+" m/s");
         }
     }
 }
