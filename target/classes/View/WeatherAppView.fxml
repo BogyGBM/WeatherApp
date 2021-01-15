@@ -6,11 +6,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="437.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WeatherAppController">
+<AnchorPane prefHeight="400.0" prefWidth="437.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WeatherAppController">
    <children>
       <SplitPane fx:id="splitPane" dividerPositions="0.31155778894472363" layoutX="139.0" layoutY="45.0" opacity="0.84" orientation="VERTICAL" prefHeight="400.0" prefWidth="437.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #40F1E7;">
                <children>
                   <ChoiceBox fx:id="countryBox" layoutX="42.0" layoutY="48.0" onAction="#WriteCities" prefWidth="150.0" />
                   <ChoiceBox fx:id="cityBox" layoutX="246.0" layoutY="48.0" onAction="#WriteDatas" prefWidth="150.0" />
@@ -26,9 +26,9 @@
                   </Label>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="200.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="200.0" style="-fx-background-color: #B2FFFB;">
                <children>
-                  <ImageView fx:id="weatherImage" fitHeight="26.0" fitWidth="46.0" layoutX="195.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="weatherImage" fitHeight="100.0" fitWidth="120.0" layoutX="250.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true" />
                   <Label fx:id="cityName" alignment="CENTER" layoutX="134.0" layoutY="22.0" prefHeight="23.0" prefWidth="167.0" text="Label" textAlignment="RIGHT">
                      <font>
                         <Font name="Times New Roman Bold Italic" size="20.0" />

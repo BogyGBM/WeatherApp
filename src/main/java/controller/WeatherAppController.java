@@ -1,5 +1,6 @@
 package controller;
 
+import Model.LogClass;
 import Model.WeatherAppModel;
 import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonArray;
@@ -9,20 +10,19 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
 
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class WeatherAppController {
     private ObservableList<WeatherAppModel> weatherData = FXCollections.observableArrayList();
+    private LogClass logger;
 
     @FXML
     private SplitPane splitPane;
@@ -58,6 +58,7 @@ public class WeatherAppController {
 
     public void InitializareData()
     {
+
         try {
             File myObj = new File("src/main/resources/input.txt");
             Scanner myReader = new Scanner(myObj);
@@ -89,6 +90,7 @@ public class WeatherAppController {
         cityLowestTemperature.setText("");
         cityTemperature.setText("");
         cityWeather.setText("");
+        weatherImage.setImage(null);
     }
 
     public void WriteLables()
@@ -102,6 +104,8 @@ public class WeatherAppController {
 
     @FXML
     private void initialize() {
+        logger = new LogClass();
+        logger.PrintInLogStart();
         ClearLables();
         InitializareData();
         ArrayList<String> countries = new ArrayList<>();
@@ -141,6 +145,7 @@ public class WeatherAppController {
             }
         }
         if(cityBox.getValue() != null) {
+                logger.PrintInLogSearches(countryBox.getValue(), cityBox.getValue());
                 WriteLables();
                 String url1 = "http://api.openweathermap.org/data/2.5/weather?q=" + cityBox.getValue() + "," + countryCode + "&appid=07eabd997e8469117b037403a758455a&units=metric";
                 //System.out.println(url1);
@@ -166,7 +171,7 @@ public class WeatherAppController {
                 }
 
 
-                String iconCode= "";
+
                // System.out.println(json);
                 JsonArray items = Json.parse(json).asObject().get("weather").asArray();
                 String weather = items.get(0).asObject().getString("main","Unknown");
@@ -175,6 +180,12 @@ public class WeatherAppController {
            // String temperature = items.get(0).asObject().getString("description", "Unknown Item");
            // String _capInfo=_info.substring(0,1).toUpperCase(Locale.ROOT)+_info.substring(1);
                 JsonObject wind = Json.parse(json).asObject().get("wind").asObject();
+                String iconCode = items.get(0).asObject().getString("icon", "Unknown");
+                String url2 ="http://openweathermap.org/img/wn/"+iconCode+"@2x.png";
+                Image img = new Image(url2, true);
+                weatherImage.setImage(img);
+
+
                 Double speed = wind.getDouble("speed", 0);
                 Double temperature = main.getDouble("temp", 0);
                 Double temperatureMin= main.getDouble("temp_min", 0);
@@ -186,6 +197,7 @@ public class WeatherAppController {
                 cityLowestTemperature.setText(temperatureMin.toString()+" °C");
                 cityHighestTemperature.setText(temperatureMax.toString()+" °C");
                 cityWindSpeed.setText(speed.toString()+" m/s");
+                logger.PrintInLogResult(weather,iconCode,temperature.toString() + " °C",temperatureMax.toString()+" °C", temperatureMin.toString()+" °C",speed.toString()+" m/s");
         }
     }
 }

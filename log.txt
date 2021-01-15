@@ -1,0 +1,11 @@
+Application started...
+Searched Vancouver in country: Canada
+Search successful
+Results: Weather Clouds;Temperature 6.99 °C;Minim Temperature 6.11 °C;Maxim Temperature 8.0 °C;Wind Speed 4.63 m/s;ImageCode 04n
+Application started...
+Searched Suva in country: Fiji
+Search successful
+Results: Weather Clouds;Temperature 28.0 °C;Minim Temperature 28.0 °C;Maxim Temperature 28.0 °C;Wind Speed 2.06 m/s;ImageCode 03n
+Searched Giurgiu in country: Romania
+Search successful
+Results: Weather Clear;Temperature 2.33 °C;Minim Temperature 0.0 °C;Maxim Temperature 2.78 °C;Wind Speed 3.09 m/s;ImageCode 01d
