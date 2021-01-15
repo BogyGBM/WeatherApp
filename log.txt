@@ -9,3 +9,7 @@ Results: Weather Clouds;Temperature 28.0 °C;Minim Temperature 28.0 °C;Maxim Te
 Searched Giurgiu in country: Romania
 Search successful
 Results: Weather Clear;Temperature 2.33 °C;Minim Temperature 0.0 °C;Maxim Temperature 2.78 °C;Wind Speed 3.09 m/s;ImageCode 01d
+Application started...
+Searched Giurgiu in country: Romania
+Search successful
+Results: Weather Clear;Temperature -1.12 °C;Minim Temperature -2.22 °C;Maxim Temperature -0.56 °C;Wind Speed 3.41 m/s;ImageCode 01n

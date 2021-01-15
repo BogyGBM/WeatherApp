@@ -13,6 +13,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ *  This is the main class that will be runned
+ *
+ *
+ * @author Gutu Bogdan
+ */
 public class Main extends Application {
 
     public static void main(String[] args){
@@ -20,8 +26,10 @@ public class Main extends Application {
     }
 
 
-
-
+    /**
+     *
+     * This is the function that will start the grafic application
+     */
     public void start(Stage primaryStage) {
 
         FXMLLoader loader = new FXMLLoader();

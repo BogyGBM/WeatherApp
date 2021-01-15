@@ -20,6 +20,10 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * This is the class where we will work with Interface Objects
+ */
+
 public class WeatherAppController {
     private ObservableList<WeatherAppModel> weatherData = FXCollections.observableArrayList();
     private LogClass logger;
@@ -55,7 +59,10 @@ public class WeatherAppController {
     @FXML
     private Label labelWindSpeed;
 
-
+    /**
+     * This function populate the list of Cities with their country and country code
+     * It reads the input.txt file and read the datas from there
+     */
     public void InitializareData()
     {
 
@@ -77,6 +84,9 @@ public class WeatherAppController {
         }
     }
 
+    /**
+     * This function clear all the Lables text
+     */
     public void ClearLables()
     {
         labelTemperature.setText("");
@@ -93,6 +103,10 @@ public class WeatherAppController {
         weatherImage.setImage(null);
     }
 
+    /**
+     * This function writes text for the Labels
+     * It's used to populate the labels when the result have to appear on the screen
+     */
     public void WriteLables()
     {
         labelTemperature.setText("Temperature:");
@@ -102,6 +116,10 @@ public class WeatherAppController {
         labelWeather.setText("Weather:");
     }
 
+    /**
+     * This function innitialize the Box of countries with the values from the lists
+     * Countries appear only once
+     */
     @FXML
     private void initialize() {
         logger = new LogClass();
@@ -118,6 +136,10 @@ public class WeatherAppController {
 
     }
 
+    /**
+     * This function is applied when the client choose a country
+     * It writes the cities from that country in the list of cities
+     */
     public void WriteCities(ActionEvent actionEvent) {
         ClearLables();
         cityBox.getItems().clear();
@@ -133,6 +155,11 @@ public class WeatherAppController {
         cityBox.getItems().addAll(cities);
     }
 
+    /**
+     * This function is used when the client chose a city
+     * It searchs for the datas requierd using a url
+     * It write in Labels the datas requiered
+     */
     public void WriteDatas(ActionEvent actionEvent) {
         ClearLables();
 
