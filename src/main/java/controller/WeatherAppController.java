@@ -29,8 +29,6 @@ public class WeatherAppController {
     private LogClass logger;
 
     @FXML
-    private SplitPane splitPane;
-    @FXML
     private Label cityName;
     @FXML
     private Label cityTemperature;
