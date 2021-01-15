@@ -15,9 +15,9 @@ Pentru a cauta un oras dintr-o tara dorita acesta va trebuii sa fie prezent in f
 
 
 ### Exemplu fișier intrare <a name="subparagraf"></a>
-RO#Giurgiu#Romania
-BG#Sofia#Bulgaria
-JM#Kingston#Jamaica
+RO#Giurgiu#Romania<br/>
+BG#Sofia#Bulgaria<br/>
+JM#Kingston#Jamaica<br/>
 
 ## Realizator <a name="paragraf3"></a>
 Std. Gutu Bogdan Mihai - Grupa C114D.
