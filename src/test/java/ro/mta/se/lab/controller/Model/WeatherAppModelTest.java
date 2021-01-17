@@ -1,9 +1,8 @@
-package Model;
+package ro.mta.se.lab.controller.Model;
 
 import java.io.File;
 import java.util.Scanner;
 
-import static org.junit.Assert.*;
 import static junit.framework.TestCase.assertEquals;
 public class WeatherAppModelTest {
 

@@ -1,17 +1,16 @@
-package Model;
+package ro.mta.se.lab.controller.Model;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.mockito.Mockito.*;
-import static org.junit.Assert.*;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.util.Scanner;
 
 import static org.mockito.Mockito.when;
-import static org.junit.Assert.*;
 
 public class WeatherAppModelTestMockito {
     String cityName;

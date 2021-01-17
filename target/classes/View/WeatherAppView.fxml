@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="437.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WeatherAppController">
+<AnchorPane prefHeight="400.0" prefWidth="437.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.mta.se.lab.controller.controler.WeatherAppController">
    <children>
       <SplitPane fx:id="splitPane" dividerPositions="0.31155778894472363" layoutX="139.0" layoutY="45.0" opacity="0.84" orientation="VERTICAL" prefHeight="400.0" prefWidth="437.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>

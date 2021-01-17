@@ -13,3 +13,19 @@ Application started...
 Searched Giurgiu in country: Romania
 Search successful
 Results: Weather Clear;Temperature -1.12 °C;Minim Temperature -2.22 °C;Maxim Temperature -0.56 °C;Wind Speed 3.41 m/s;ImageCode 01n
+Application started...
+Searched Nadi in country: Fiji
+Search successful
+Results: Weather Clouds;Temperature 24.0 °C;Minim Temperature 24.0 °C;Maxim Temperature 24.0 °C;Wind Speed 2.06 m/s;ImageCode 02n
+Searched Kingston in country: Jamaica
+Search successful
+Results: Weather Clouds;Temperature 28.51 °C;Minim Temperature 27.78 °C;Maxim Temperature 29.44 °C;Wind Speed 2.06 m/s;ImageCode 02d
+Searched Giurgiu in country: Romania
+Search successful
+Results: Weather Clouds;Temperature -2.94 °C;Minim Temperature -3.89 °C;Maxim Temperature -2.22 °C;Wind Speed 0.33 m/s;ImageCode 04n
+Searched Slatina in country: Romania
+Search successful
+Results: Weather Clear;Temperature -3.1 °C;Minim Temperature -5.0 °C;Maxim Temperature -2.22 °C;Wind Speed 2.06 m/s;ImageCode 01n
+Searched Brasov in country: Romania
+Search successful
+Results: Weather Clouds;Temperature -7.77 °C;Minim Temperature -8.33 °C;Maxim Temperature -7.22 °C;Wind Speed 1.29 m/s;ImageCode 04n

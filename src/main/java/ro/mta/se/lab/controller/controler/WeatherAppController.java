@@ -1,7 +1,7 @@
-package controller;
+package ro.mta.se.lab.controller.controler;
 
-import Model.LogClass;
-import Model.WeatherAppModel;
+import ro.mta.se.lab.controller.Model.LogClass;
+import ro.mta.se.lab.controller.Model.WeatherAppModel;
 import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
@@ -202,8 +202,7 @@ public class WeatherAppController {
                 String weather = items.get(0).asObject().getString("main","Unknown");
 
                 JsonObject main = Json.parse(json).asObject().get("main").asObject();
-           // String temperature = items.get(0).asObject().getString("description", "Unknown Item");
-           // String _capInfo=_info.substring(0,1).toUpperCase(Locale.ROOT)+_info.substring(1);
+
                 JsonObject wind = Json.parse(json).asObject().get("wind").asObject();
                 String iconCode = items.get(0).asObject().getString("icon", "Unknown");
                 String url2 ="http://openweathermap.org/img/wn/"+iconCode+"@2x.png";

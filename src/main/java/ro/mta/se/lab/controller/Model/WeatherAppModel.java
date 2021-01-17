@@ -1,6 +1,4 @@
-package Model;
-
-import javafx.beans.property.StringProperty;
+package ro.mta.se.lab.controller.Model;
 
 /**
  * This is the Class that contains the datas for our application

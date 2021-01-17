@@ -1,7 +1,6 @@
-package Model;
+package ro.mta.se.lab.controller.Model;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
